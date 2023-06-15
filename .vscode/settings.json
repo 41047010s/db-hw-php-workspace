@@ -1,0 +1,16 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "140.122.184.125",
+            "port": 3307,
+            "driver": "MySQL",
+            "name": "dbproject",
+            "database": "team14",
+            "username": "team14"
+        }
+    ]
+}

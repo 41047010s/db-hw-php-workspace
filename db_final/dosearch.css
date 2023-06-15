@@ -1,0 +1,170 @@
+.box {
+    position: relative;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.navbar{
+    z-index: 1;
+    position: absolute;
+    top: -10px;
+    background-color: rgb(0, 136, 255);
+    opacity: 0.9;
+    border-radius: 8px;
+
+
+
+    
+    height: 2vh;
+    width:98vw; 
+    /*min-width: 99%;*/
+    border: -8px;
+    padding: 10px;
+
+}
+.navbar a{
+    color: aliceblue;
+    font-size: 2vh;
+    text-decoration: none;
+    /* font-family: fantasy; */
+}
+
+.signup_pos{
+    position: absolute;
+    right: 3vw;
+}
+
+.login_pos{
+    position: absolute;
+    right: 7vw;
+}
+
+.return_indexpage_pos{
+    position: absolute;
+    left: 5vw;
+    font-weight: 700;
+}
+
+.main_php_display{
+  position: absolute;
+  top: 10vh;
+  left: 10vw;
+}
+
+
+.course-block {
+  border-radius: 2vh;
+  width: 35vw;
+  height: 30vh;
+  background-color: white;
+  border-width: 1px;
+  border-style: solid;
+  border-color:gray;
+  
+  padding: 10px;
+  margin: 10px;
+}
+  
+  .course-block p {
+    margin-bottom: 5px;
+
+  }
+  
+  .course-block a {
+    color: #333;
+    text-decoration: none;
+  }
+
+  .course-block a:hover {
+    text-decoration: underline;
+  }
+
+.three_point{
+  display:flex;
+  height:10vh;
+  width:25vw;
+  align-items: center;
+  justify-content: center;
+  /* background-color:red; */
+}
+
+.div_E{
+  width:8vw;
+  
+  border-width: 1px;
+  border-style:solid;
+  border-color: red;
+  border-radius: 1vh;
+  background-color: pink;
+
+  padding:1vh
+}
+
+.div_L{
+  width:8vw;
+  
+  border-width: 1px;
+  border-style:solid;
+  border-color: green;
+  border-radius: 1vh;
+  background-color: lightgreen;
+
+  padding:1vh;
+}
+
+.div_U{
+  width:8vw;
+  
+  border-width: 1px;
+  border-style:solid;
+  border-color: #FFFF00;
+  border-radius: 1vh;
+  background-color: lightyellow;
+
+  padding:1vh
+}
+
+
+
+
+
+.course-block p.instructor{
+  color: #333;
+}
+
+.course-block p.instructor:hover{
+  text-decoration: underline;
+  content: attr(data-tooltip);
+} 
+
+
+.course-block p.instructor:hover::after {
+color: #500;
+content: attr(data-tooltip);
+}
+
+
+
+.background{
+    z-index: 100;
+    background: url("https://i.imgur.com/wdMfzuC.png");
+    background-attachment: fixed;
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    /* background-color: yellow; */
+
+    top: -1000px;
+
+
+    height: 10000vh;
+    width: 99vw;
+    opacity: 0.2;
+}
+
+
+
+
+
+
+

@@ -1,95 +1,199 @@
-<html>
+<?php
+    session_start();
+    
+?>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>學生資料庫管理系統</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首頁</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<style>
-	table, th, td {
-	border: 1px solid black;
-	border-collapse: collapse;
-	}
-	th, td {
-	padding: 5px;
-	text-align: left;    
-	}
-</style>
+<body><?php
+    session_start();
+    
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首頁</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-	
-	<h1 align="center">學生資料庫管理系統</h1>
-	<table style="width:50%" align="center">
-		<tr><th>id</th><th>Name</th><th>stdid</th><th colspan="2">Action</th></tr>
-		<!-- TODO 
-			從資料庫中撈出student表格的資料，用html呈現。
-			
-			以下html為範例。
-		-->
-		<tr>
-			<td>7</td>
-			<td>Daenerys Targaryen</td>
-			<td>59</td>
-			<td><a href="update.php?">修改</td>
-			<td><a href="delete.php?">刪除</td>
-		</tr>
-		<tr>
-			<td>8</td>
-			<td>Daenerys Targaryen</td>
-			<td>59</td>
-			<td><a href="update.php?">修改</td>
-			<td><a href="delete.php?">刪除</td>
-		</tr>
-		<tr>
-			<td>9</td>
-			<td>Jon Snow</td>
-			<td>60</td>
-			<td><a href="update.php?">修改</td>
-			<td><a href="delete.php?">刪除</td>
-		</tr>
-		<tr>
-			<td>10</td>
-			<td>Arya Stark</td>
-			<td>61</td>
-			<td><a href="update.php?">修改</td>
-			<td><a href="delete.php?">刪除</td>
-		</tr>
+    <div class="box">
+
+        <div class="background">
+        </div>
+
+        <div >
+            <nav class="navbar">
+                <?php
+                if ($_SESSION['login'])
+                {
+                    echo "<a href='userInfo.php' target='_self' class='signup_pos'> PROFILE </a>";
+                    echo "<a href='logout.php' target='_self' class='login_pos'> LOG OUT </a>";
+                }
+                else{
+                    echo "<a href='signup.php' target='_self' class='signup_pos'> SIGN UP</a>";
+                    echo "<a href='login.php' target='_self' class='login_pos'> LOG IN</a>";
+                }
+                ?>
+                
+                <a href="search.php" target="_self" class="search_pos">搜尋更多課程評價！</a>
+            </nav>
+        </div>
+        
+
+        <div class="pp">
+            <p>最新評價📢📢</p>            
+        </div>
 
 
-		<!-- hint: 用這段php code 讀取資料庫的資料-->
+        <div class="first_post_div">
+        <?php       
+            //include "conn.php";        
+             //******** update your personal settings ******** 
+             $servername = "140.122.184.125:3307";
+             $username = "team14";
+             $password = "kQVYoJa7S0NIXlCN";
+             $dbname = "team14";
+             //Connecting to and selecting a MySQL database
+             $conn = new mysqli($servername, $username, $password, $dbname);
+            if (!$conn->set_charset("utf8")) {
+                printf("Error loading character set utf8: %s\n", $conn->error);
+                exit();
+            }
+            
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            } 
+            
+            $sql = "SELECT * FROM post , course , user where course.serial_no = post.serial_no and user.user_id = post.user_id ORDER BY post_time DESC LIMIT 1";
+            $result = $conn->query($sql);
+            echo $result->num_rows;
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                $user_id = $row['user_id'];
+                $title = $row['course.title'];
+                $post_time = $row['post_time'];
+                $title = $row['title'];
+                $post_id = $row['post_id'];
+                $post_content = $row['content'];
+                
+                echo "<p>$post_time</p>";
+                echo "<p>$user_id</p>";
+                echo "<p class= 'post_title'>$title</p>";
+                echo "<p class='id'>$post_id</p>";
+                echo "<p class='content'>$post_content</p>";
 
-		<?php
-		/*
-				include "conn.php";
-				
-				// set up char set
-				if (!$conn->set_charset("utf8")) {
-					printf("Error loading character set utf8: %s\n", $conn->error);
-					exit();
-				}
-				
-				// Check connection
-				if ($conn->connect_error) {
-					die("Connection failed: " . $conn->connect_error);
-				} 
-				
-				// ******** update your personal settings ******** 
-				$sql = "SELECT ...";	// set up your sql query
-				$result = $conn->query($sql);	// Send SQL Query
+            } else {
+                echo "<p class= 'post_title'>No posts found</p>";
+            }
+        ?> 
+        
+            
+            <p class="post_article">This is article 1</p>
+            
+        </div>
 
-				if ($result->num_rows > 0) {	
-					while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
-						// Process the Result here , need to modify.
-					}
-				} else {
-					echo "0 results";
-				}
-		*/
-		?>
-		
-	</table>
-	<p align="center"><a href="create.html">新增資料</a><p>
+        <div class="second_post_div">
+            <p class="post_title">This is title 2</p>
+            <p class="post_article">This ia article 2</p>
+        </div>
+
+    </div>
 </body>
-	
 </html>
+    <div class="box">
+
+        <div class="background">
+        </div>
+
+        <div >
+            <nav class="navbar">
+                <?php
+                if ($_SESSION['login'])
+                {
+                    echo "<a href='userInfo.php' target='_self' class='signup_pos'> PROFILE </a>";
+                    echo "<a href='logout.php' target='_self' class='login_pos'> LOG OUT </a>";
+                }
+                else{
+                    echo "<a href='signup.php' target='_self' class='signup_pos'> SIGN UP</a>";
+                    echo "<a href='login.php' target='_self' class='login_pos'> LOG IN</a>";
+                }
+                ?>
+                
+                <a href="search.php" target="_self" class="search_pos">搜尋更多課程評價！</a>
+            </nav>
+        </div>
+        
+
+        <div class="pp">
+            <p>最新評價📢📢</p>            
+        </div>
 
 
-				
-		
+        <div class="first_post_div">
+        <?php       
+            //include "conn.php";        
+             //******** update your personal settings ******** 
+             $servername = "140.122.184.125:3307";
+             $username = "team14";
+             $password = "kQVYoJa7S0NIXlCN";
+             $dbname = "team14";
+             //Connecting to and selecting a MySQL database
+             $conn = new mysqli($servername, $username, $password, $dbname);
+            if (!$conn->set_charset("utf8")) {
+                printf("Error loading character set utf8: %s\n", $conn->error);
+                exit();
+            }
+            
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            } 
+            
+            $sql = "SELECT * FROM post , course , user where course.serial_no = post.serial_no and user.user_id = post.user_id ORDER BY post_time DESC LIMIT 1";
+            $result = $conn->query($sql);
+            echo $result->num_rows;
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                $user_id = $row['user_id'];
+                $title = $row['course.title'];
+                $post_time = $row['post_time'];
+                $title = $row['title'];
+                $post_id = $row['post_id'];
+                $post_content = $row['content'];
+                
+                echo "<p>$post_time</p>";
+                echo "<p>$user_id</p>";
+                echo "<p class= 'post_title'>$title</p>";
+                echo "<p class='id'>$post_id</p>";
+                echo "<p class='content'>$post_content</p>";
+
+            } else {
+                echo "<p class= 'post_title'>No posts found</p>";
+            }
+        ?> 
+        
+            
+            <p class="post_article">This is article 1</p>
+            
+        </div>
+
+        <div class="second_post_div">
+            <p class="post_title">This is title 2</p>
+            <p class="post_article">This ia article 2</p>
+        </div>
+
+    </div>
+</body>
+</html>

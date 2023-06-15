@@ -1,0 +1,159 @@
+.box {
+    position: relative;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.navbar{
+    z-index: 1;
+    position: absolute;
+    top: -10px;
+    background-color: rgb(0, 136, 255);
+    opacity: 0.9;
+    border-radius: 8px;
+
+
+
+    
+    height: 2vh;
+    width:98vw; 
+    /*min-width: 99%;*/
+    border: -8px;
+    padding: 10px;
+
+}
+.navbar a{
+    color: aliceblue;
+    font-size: 2vh;
+    text-decoration: none;
+    /* font-family: fantasy; */
+}
+
+.signup_pos{
+    position: absolute;
+    right: 3vw;
+}
+
+.login_pos{
+    position: absolute;
+    right: 7vw;
+}
+
+.return_indexpage_pos{
+    position: absolute;
+    left: 5vw;
+    font-weight: 700;
+}
+
+.main_display_box{
+    position: absolute;
+    top: 25vh;
+    left: 30vw;
+
+    border-radius: 5vh;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(163, 163, 163);
+
+    height: 35vh;
+    width: 40vw;
+
+    background-color: white;
+    opacity: 0.9;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+
+
+.table_box{
+  width: 39vh; 
+  border: 1px; 
+  background-color: white;; 
+  align-items: center;
+  justify-content: center;
+}
+
+.boarder_test{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(163, 163, 163);
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+}
+
+
+
+
+
+
+.course-block {
+    width: 300px;
+    height: 200px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  .course-block p {
+    margin-bottom: 5px;
+  }
+  
+  .course-block a {
+    color: #333;
+    text-decoration: none;
+  }
+
+  .course-block a:hover {
+    text-decoration: underline;
+  }
+
+
+
+.course-block p.instructor{
+  color: #333;
+}
+
+.course-block p.instructor:hover{
+  text-decoration: underline;
+  content: attr(data-tooltip);
+} 
+
+
+.course-block p.instructor:hover::after {
+color: #500;
+content: attr(data-tooltip);
+/* display: block;
+position: absolute;
+top: calc(100% + 5px);
+left: 0;
+width: 200px;
+background-color: #f2f2f2;
+border: 1px solid #ccc;
+border-radius: 5px;
+padding: 10px;
+margin-top: 5px; */
+}
+
+
+
+  .background{
+    z-index: 100;
+    background: url("https://i.imgur.com/wdMfzuC.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-color: yellow; */
+
+    top: -1000px;
+
+
+    height: 98vh;
+    width: 99vw;
+    opacity: 0.2;
+  }

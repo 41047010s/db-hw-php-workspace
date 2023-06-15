@@ -1,0 +1,105 @@
+.box {
+    position: relative;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.navbar{
+    z-index: 1;
+    position: absolute;
+    top: -10px;
+    background-color: rgb(0, 136, 255);
+    opacity: 0.9;
+    border-radius: 8px;
+
+
+
+    
+    height: 2vh;
+    width:98vw; 
+
+    border: -8px;
+    padding: 10px;
+
+}
+
+.signup_page_title{
+    color: aliceblue;
+    font-size: 2.5vh;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: fantasy;
+
+    position: absolute;
+    top: -2vh;
+    left: 48.5vw;
+
+}
+
+.sign_up_box{
+    position: absolute;
+    top: 25vh;
+    left: 38vw;
+
+    border-radius: 5vh;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(163, 163, 163);
+
+    height: 55vh;
+    width: 24vw;
+
+    background-color: white;
+    opacity: 0.9;
+
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.only_underline{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(163, 163, 163);
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+}
+
+.register_button{
+    border-radius: 2vh;
+    border-width: 0px;
+
+    padding-left: 1.5vh;
+    padding-right: 1.5vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+
+
+.background{
+    z-index: 100;
+    background: url("https://images.unsplash.com/photo-1636998094434-96c8e4635184?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1173&q=80");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-color: yellow; */
+
+    top: -1000px;
+
+
+    height: 98vh;
+    width: 99vw;
+    opacity: 0.2;
+
+    
+    /* border-style: solid;
+    border-color: aqua; */
+
+    /*
+    margin: px;
+    padding: 0px;
+    */
+}

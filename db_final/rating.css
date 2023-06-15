@@ -1,0 +1,275 @@
+
+/* #rating-stars {
+    margin-bottom: 10px;
+  }
+  
+  .star {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url('https://e7.pngegg.com/pngimages/508/846/png-clipart-star-star-angle-triangle.png') no-repeat;
+    background-size: contain;
+    cursor: move;
+    transition: background-position 0.2s; /* Add transition property for smooth animation 
+  }
+  
+  .star.selected {
+    background-position: 0 -20px; /* Move background position to show filled star 
+  } */
+.box {
+    position: relative;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.navbar{
+    z-index: 1;
+    position: absolute;
+    top: -10px;
+    background-color: rgb(0, 136, 255);
+    opacity: 0.9;
+    border-radius: 8px;
+
+
+
+    
+    height: 2vh;
+    width:98vw; 
+    /*min-width: 99%;*/
+    border: -8px;
+    padding: 10px;
+
+}
+.navbar a{
+    color: aliceblue;
+    font-size: 2vh;
+    text-decoration: none;
+    /* font-family: fantasy; */
+}
+
+.signup_pos{
+    position: absolute;
+    right: 3vw;
+}
+
+.login_pos{
+    position: absolute;
+    right: 7vw;
+}
+
+.return_indexpage_pos{
+    position: absolute;
+    left: 5vw;
+    font-weight: 700;
+}
+
+.main_php_display_box{
+    position: absolute;
+    top: 10vh;
+    left: 7vw;
+    right: 7vw;
+    height: autofill;
+    width: 79vw;
+
+    padding: 10vh;
+
+    border-width: 1px;
+    border-color: gray;
+    border-radius: 5vh;
+    border-style: solid;
+
+    background-color: white;
+    
+}
+
+.title_part{
+    border-top: 1px;
+    border-left: 1px ;
+    border-right: 1px;
+    border-bottom: 0.3vh grey;
+    border-bottom-style: solid;
+}
+
+.title_part p{
+    font-size: 4vh;
+    
+}
+
+.size_3vh{
+    font-size: 3vh;
+}
+
+.info_part{
+    border-top: 1px;
+    border-left: 1px ;
+    border-right: 1px;
+    border-bottom: 0.3vh grey;
+    border-bottom-style: solid;
+
+
+
+    display:flex;
+    flex-direction: column;
+    max-width: 79vw;
+    height:40vh;
+    
+}
+/* .info_part_second_title{
+    
+} */
+.sep2_1{
+    display:flex;
+    flex-direction: row;
+}
+.info_content{
+    height:3vh;
+    width:30vw;
+    border-top: 1px;
+    border-left: 1px ;
+    border-right: 1px;
+    border-bottom: 0.1vh grey;
+    border-bottom-style: solid;
+}
+
+
+
+.three_point{
+    display:flex;
+    height:10vh;
+    width:25vw;
+    align-items: center;
+    justify-content: center;
+   /* background-color:red; */
+}
+
+.div_E{
+    width:8vw;
+    height:5vh;
+  
+    border-width: 1px;
+    border-style:solid;
+    border-color: red;
+    border-radius: 1vh;
+    background-color: pink;
+
+    padding:1vh
+}
+
+.div_L{
+    width:8vw;
+    height:5vh;
+  
+    border-width: 1px;
+    border-style:solid;
+    border-color: green;
+    border-radius: 1vh;
+    background-color: lightgreen;
+
+    /* padding:1vh; */
+}
+
+.div_U{
+    width:8vw; 
+    height:5vh;
+  
+    border-width: 1px;
+    border-style:solid;
+    border-color: #DD9900;
+    border-radius: 1vh;
+    background-color: #FFFF99;
+
+    padding:1vh
+}
+
+.bot_line{
+    position: relative;
+    border-top: 0px;
+    border-left: 0px ;
+    border-right: 0px;
+    border-bottom: 0.5vh blue;
+    border-bottom-style: solid;
+
+    
+    left: 1%;
+    width: 98%;
+    height: 1vh;
+}
+
+.post_odd{
+    border-radius : 3v;
+    background-color: #DDDDFF;
+    padding: 3vh; 
+    margin:3vh;
+
+    font-style: monospace;
+
+    height:40vh;
+}
+
+.post_even{
+    border-radius : 3vh;
+    background-color: #EEEEFF;
+    padding: 3vh;
+    margin:3vh;
+
+    height:40vh;
+}
+
+
+
+
+
+ /*below is post.js part*/ 
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+.background{
+    z-index: 100;
+    background: url("https://i.imgur.com/wdMfzuC.png");
+    background-attachment: fixed;
+     background-repeat: no-repeat; 
+    background-size: cover;
+    /* background-color: yellow; */
+
+    top: -1000px;
+
+
+    height: 10000vh;
+    width: 99vw;
+    opacity: 0.2;
+}
